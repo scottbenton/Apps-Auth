@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "scott-benton-auth-ui",
+    "site": "scottbenton-auth-ui",
     "public": "dist",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   }

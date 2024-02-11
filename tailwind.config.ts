@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        devtools: colors.indigo,
+        auth: colors.indigo,
       },
     },
   },

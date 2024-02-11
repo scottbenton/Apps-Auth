@@ -1,2 +1,96 @@
 @tailwind components;
 @tailwind utilities;
+
+#supertokens-root {
+  @apply bg-gray-200;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  [data-supertokens="container"] {
+    font-family: unset !important;
+    margin: unset;
+    @apply shadow-md rounded-xl max-w-md font-sans w-full;
+  }
+
+  [data-supertokens="row"] {
+    width: unset;
+    @apply p-8;
+  }
+
+  [data-supertokens="headerTitle"] {
+    @apply text-2xl text-gray-700 font-bold;
+  }
+
+  [data-supertokens~="providerButton"] {
+    max-width: unset !important;
+    margin: unset !important;
+    border: 1px solid rgb(209, 213, 219) !important;
+    height: unset;
+    @apply border-solid border border-gray-500 rounded-lg text-sm uppercase flex items-center justify-center pr-4 py-2 space-x-2 text-gray-700 tracking-wide;
+
+    &:hover {
+      @apply bg-gray-100;
+    }
+
+    &:focus {
+      @apply border border-auth-500 border-solid ring-2 ring-auth-300;
+    }
+
+    [data-supertokens~="providerButtonLeft"] {
+      margin-left: unset !important;
+    }
+
+    [data-supertokens~="providerButtonText"] {
+      @apply font-semibold;
+    }
+  }
+
+  [data-supertokens="thirdPartyPasswordlessDivider"] {
+    @apply flex items-center my-8 p-0;
+    [data-supertokens="divider"] {
+      @apply m-0 p-0 border-gray-300;
+    }
+    [data-supertokens="thirdPartyPasswordlessDividerText"] {
+      @apply m-0 text-gray-600 text-base rounded-full font-semibold uppercase;
+    }
+  }
+
+  [data-supertokens~="formRow"] {
+    @apply pb-0;
+  }
+
+  [data-supertokens="label"] {
+    @apply text-gray-500 font-semibold text-sm;
+  }
+
+  [data-supertokens~="inputWrapper"] {
+    height: unset;
+    border-width: 0px;
+  }
+
+  [data-supertokens~="inputContainer"] input.supertokens-input {
+    height: unset;
+    @apply text-gray-700 px-4 py-3 bg-gray-100 border border-gray-300 border-solid;
+    &:focus {
+      height: unset;
+      @apply border-blue-500 ring-2 ring-blue-300;
+    }
+  }
+
+  [data-supertokens="button"][type="submit"] {
+    height: unset;
+    @apply bg-auth-700 text-white border-none py-3 mt-8;
+    &:hover {
+      @apply bg-auth-800;
+    }
+    &:focus {
+      @apply ring-2 ring-auth-300;
+    }
+  }
+
+  [data-supertokens="superTokensBranding"] {
+    @apply hidden;
+  }
+}

@@ -6,7 +6,8 @@ const deps = require("./package.json").dependencies;
 const PORT = 3000;
 const name = "auth_ui";
 const exposedFiles = {
-  "./Auth": "./src/Auth.tsx",
+  "./AuthProvider": "./src/AuthProvider.tsx",
+  "./authRoutes": "./src/authRoutes.ts",
 };
 
 module.exports = (_, argv) => [
@@ -74,7 +75,7 @@ module.exports = (_, argv) => [
           },
           "react-router-dom": {
             singleton: true,
-            requiredVersion: deps["react-dom"],
+            requiredVersion: deps["react-router-dom"],
           },
         },
       }),

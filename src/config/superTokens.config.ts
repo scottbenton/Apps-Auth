@@ -4,8 +4,8 @@ import Session from "supertokens-auth-react/recipe/session";
 import { SuperTokensConfig } from "supertokens-auth-react/lib/build/types";
 
 export function getApiDomain() {
-  const apiPort = process.env.VITE_AUTH_API_PORT || 3001;
-  const apiUrl = process.env.VITE_AUTH_API_URL || `http://localhost:${apiPort}`;
+  const apiPort = process.env.LOCAL_AUTH_API_PORT || 3001;
+  const apiUrl = process.env.AUTH_API_URL || `http://localhost:${apiPort}`;
   return apiUrl;
 }
 
@@ -16,9 +16,7 @@ export function getWebsiteDomain() {
 }
 
 export function getSessionTokenFrontendDomain() {
-  const domain = process.env.VITE_AUTH_SESSION_TOKEN_DOMAIN as
-    | string
-    | undefined;
+  const domain = process.env.AUTH_SESSION_TOKEN_DOMAIN as string | undefined;
   return domain;
 }
 
@@ -42,9 +40,7 @@ export const superTokensConfig: SuperTokensConfig = {
       },
       contactMethod: "EMAIL",
     }),
-    Session.init({
-      sessionTokenFrontendDomain: getSessionTokenFrontendDomain(),
-    }),
+    Session.init(),
   ],
 };
 

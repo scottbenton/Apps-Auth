@@ -2,18 +2,11 @@ import ThirdPartyPasswordless from "supertokens-auth-react/recipe/thirdpartypass
 import { ThirdPartyPasswordlessPreBuiltUI } from "supertokens-auth-react/recipe/thirdpartypasswordless/prebuiltui";
 import Session from "supertokens-auth-react/recipe/session";
 import { SuperTokensConfig } from "supertokens-auth-react/lib/build/types";
+import { getApiUrl } from "../utils/getApiUrl";
 
 export function getApiDomain() {
-  const apiPort = process.env.LOCAL_AUTH_API_PORT || 3001;
-  const environmentVariableURL = process.env.AUTH_API_URL;
-
-  if (environmentVariableURL) {
-    console.debug(environmentVariableURL);
-    return environmentVariableURL;
-  } else {
-    console.debug(apiPort);
-    return `http://localhost:${apiPort}`;
-  }
+  const url = getApiUrl();
+  return url ?? "";
 }
 
 export function getWebsiteDomain() {

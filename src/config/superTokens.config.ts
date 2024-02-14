@@ -35,7 +35,10 @@ export const superTokensConfig: SuperTokensConfig = {
       },
       contactMethod: "EMAIL",
     }),
-    Session.init(),
+    Session.init({
+      // sessionTokenFrontendDomain: ".scottbenton.dev",
+      tokenTransferMethod: "header", // or "cookie"
+    }),
   ],
 };
 

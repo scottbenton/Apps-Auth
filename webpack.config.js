@@ -8,6 +8,9 @@ const name = "auth_ui";
 const exposedFiles = {
   "./AuthProvider": "./src/AuthProvider.tsx",
   "./authRoutes": "./src/authRoutes.ts",
+  "./useCurrentUser": "./src/context/useCurrentUser.ts",
+  "./roles": "./src/types/Roles.ts",
+  "./SessionBlocker": "./src/components/SessionBlocker.tsx",
 };
 
 module.exports = (_, argv) => [

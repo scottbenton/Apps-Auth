@@ -12,8 +12,6 @@ const superTokensRoutes = getSuperTokensRoutesForReactRouterDom(
   PreBuiltUIList
 );
 
-const authRoutes: RouteObject[] = superTokensRoutes.map(
+export const authRoutes: RouteObject[] = superTokensRoutes.map(
   (element) => element.props
 );
-
-export default authRoutes;

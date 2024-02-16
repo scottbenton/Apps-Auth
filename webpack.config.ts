@@ -1,10 +1,9 @@
 import { constructModuleWebpackConfig } from "@scottbenton/apps-build";
 import { ModuleScope } from "@scottbenton/apps-config";
-import { dependencies } from "./package.json";
 
 const config = constructModuleWebpackConfig({
   name: ModuleScope.Authentication,
-  dependencies,
+  dependencies: {},
   exposes: {
     "./AuthProvider": "./src/AuthProvider.tsx",
     "./authRoutes": "./src/authRoutes.ts",

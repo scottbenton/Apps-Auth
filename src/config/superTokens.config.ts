@@ -2,10 +2,10 @@ import ThirdPartyPasswordless from "supertokens-auth-react/recipe/thirdpartypass
 import { ThirdPartyPasswordlessPreBuiltUI } from "supertokens-auth-react/recipe/thirdpartypasswordless/prebuiltui";
 import Session from "supertokens-auth-react/recipe/session";
 import { SuperTokensConfig } from "supertokens-auth-react/lib/build/types";
-import { getApiUrl } from "../utils/getApiUrl";
+import { getApiUrl, API } from "@scottbenton/apps-config";
 
 export function getApiDomain() {
-  const url = getApiUrl();
+  const url = getApiUrl(API.Auth);
   return url ?? "";
 }
 

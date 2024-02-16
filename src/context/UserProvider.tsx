@@ -5,7 +5,7 @@ import {
   useSessionContext,
 } from "supertokens-auth-react/recipe/session";
 import { UserRoleClaim } from "supertokens-auth-react/recipe/userroles";
-import { getApiUrl } from "../utils/getApiUrl";
+import { getApiUrl, API } from "@scottbenton/apps-config";
 import { Roles } from "../types/Roles";
 
 export function UserProvider(props: PropsWithChildren) {
@@ -38,7 +38,7 @@ export function UserProvider(props: PropsWithChildren) {
 
   useEffect(() => {
     if (hasSession) {
-      fetch(`${getApiUrl()}/user/current`)
+      fetch(`${getApiUrl(API.Auth)}/user/current`)
         .then(async (resp) => {
           const data = await resp.json();
           setEmail(data.email);

@@ -49,8 +49,6 @@ export function UserProvider(props: PropsWithChildren) {
     }
   }, [hasSession]);
 
-  console.debug(isSessionLoading, email);
-
   return (
     <UserContext.Provider
       value={
@@ -58,11 +56,13 @@ export function UserProvider(props: PropsWithChildren) {
           ? { loading: true }
           : {
               loading: false,
-              user: {
-                uid: session.userId,
-                roles,
-                email,
-              },
+              user: session.userId
+                ? {
+                    uid: session.userId,
+                    roles,
+                    email,
+                  }
+                : undefined,
             }
       }
     >

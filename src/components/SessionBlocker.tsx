@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, ReactNode, useEffect } from "react";
-import { Roles } from "../types/Roles";
+import { Roles } from "@scottbenton/apps-config";
 import { useCurrentUser } from "../context/useCurrentUser";
 import { useNavigate } from "react-router-dom";
 

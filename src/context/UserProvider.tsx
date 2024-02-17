@@ -1,12 +1,11 @@
 import React, { PropsWithChildren, useEffect, useState } from "react";
-import { UserContext } from "./UserContext";
+import { UserContext, Roles } from "@scottbenton/apps-config";
 import {
   useClaimValue,
   useSessionContext,
 } from "supertokens-auth-react/recipe/session";
 import { UserRoleClaim } from "supertokens-auth-react/recipe/userroles";
 import { getApiUrl, API } from "@scottbenton/apps-config";
-import { Roles } from "../types/Roles";
 
 export function UserProvider(props: PropsWithChildren) {
   const { children } = props;
@@ -49,12 +48,15 @@ export function UserProvider(props: PropsWithChildren) {
     }
   }, [hasSession]);
 
+  console.debug(isSessionLoading, email);
+
   return (
     <UserContext.Provider
       value={
         isSessionLoading
-          ? { loading: true }
+          ? { loading: true, version: "loading-provider" }
           : {
+              version: "loaded-provider",
               loading: false,
               user: {
                 uid: session.userId,

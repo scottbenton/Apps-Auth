@@ -7,8 +7,6 @@ const config = constructModuleWebpackConfig({
   exposes: {
     "./AuthProvider": "./src/AuthProvider.tsx",
     "./authRoutes": "./src/authRoutes.ts",
-    "./useCurrentUser": "./src/context/useCurrentUser.ts",
-    "./roles": "./src/types/Roles.ts",
     "./SessionBlocker": "./src/components/SessionBlocker.tsx",
   },
 });

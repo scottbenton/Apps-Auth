@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 import { SuperTokensWrapper } from "supertokens-auth-react";
 import { initAuth } from "./config/initSuperTokens";
 import { UserProvider } from "./context/UserProvider";

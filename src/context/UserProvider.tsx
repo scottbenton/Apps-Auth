@@ -1,5 +1,6 @@
 import React, { PropsWithChildren, useEffect, useState } from "react";
-import { UserContext, Roles } from "@scottbenton/apps-config";
+import { UserContext } from "./UserContext";
+import { Roles } from "../types/Roles";
 import {
   useClaimValue,
   useSessionContext,
@@ -54,9 +55,8 @@ export function UserProvider(props: PropsWithChildren) {
     <UserContext.Provider
       value={
         isSessionLoading
-          ? { loading: true, version: "loading-provider" }
+          ? { loading: true }
           : {
-              version: "loaded-provider",
               loading: false,
               user: {
                 uid: session.userId,

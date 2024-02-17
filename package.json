@@ -19,7 +19,7 @@
     "@babel/preset-env": "^7.15.8",
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.10.4",
-    "@scottbenton/apps-build": "^1.2.1",
+    "@scottbenton/apps-build": "^1.2.3",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "autoprefixer": "^10.4.17",
@@ -39,10 +39,11 @@
     "webpack-dev-server": "^4.3.1"
   },
   "dependencies": {
-    "@scottbenton/apps-config": "^1.1.0",
+    "@scottbenton/apps-config": "^1.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.0",
+    "react-singleton-context": "^1.0.5",
     "supertokens-auth-react": "^0.37.0"
   }
 }

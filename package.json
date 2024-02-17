@@ -2,12 +2,11 @@
   "name": "dev-tools",
   "version": "1.0.0",
   "scripts": {
-    "build": "webpack --mode production && npm run tar",
+    "build": "webpack --mode production",
     "build:dev": "webpack --mode development",
     "build:start": "cd dist && PORT=3000 npx serve",
     "start": "webpack serve --mode development",
-    "start:live": "webpack serve --mode development",
-    "tar": "tar czvf dist/auth_ui-dts.tgz -C .wp_federation/ auth_ui"
+    "start:live": "webpack serve --mode development"
   },
   "license": "MIT",
   "author": {

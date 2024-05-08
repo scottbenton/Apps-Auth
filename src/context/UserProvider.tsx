@@ -7,8 +7,7 @@ import {
 } from "supertokens-auth-react/recipe/session";
 import { UserRoleClaim } from "supertokens-auth-react/recipe/userroles";
 import { getApiUrl, API } from "@scottbenton/apps-config";
-import Session from "supertokens-auth-react/lib/build/recipe/session/recipe";
-import { useUserContext } from "supertokens-auth-react";
+import Session from "supertokens-auth-react/recipe/session";
 
 export function UserProvider(props: PropsWithChildren) {
   const { children } = props;
@@ -16,7 +15,6 @@ export function UserProvider(props: PropsWithChildren) {
   const [email, setEmail] = useState<string>();
 
   const session = useSessionContext();
-  const userContext = useUserContext();
   const claimValue = useClaimValue(UserRoleClaim);
   let roles: Record<Roles, boolean> | undefined = undefined;
 
@@ -54,14 +52,13 @@ export function UserProvider(props: PropsWithChildren) {
 
   const getAccessToken = useCallback(() => {
     return new Promise<string | undefined>((resolve, reject) => {
-      Session.getInstanceOrThrow()
-        .getAccessToken({ userContext })
+      Session.getAccessToken()
         .then((token) => {
           resolve(token);
         })
         .catch(reject);
     });
-  }, [userContext]);
+  }, []);
 
   return (
     <UserContext.Provider

@@ -37,7 +37,7 @@ export const superTokensConfig: SuperTokensConfig = {
     }),
     Session.init({
       sessionTokenFrontendDomain: ".scottbenton.dev",
-      tokenTransferMethod: "cookie", // or "cookie"
+      tokenTransferMethod: "header", // or "cookie"
     }),
   ],
 };

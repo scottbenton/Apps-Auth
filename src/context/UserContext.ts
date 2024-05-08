@@ -8,11 +8,13 @@ export interface IUserContext {
     email?: string;
     roles?: Record<Roles, boolean>;
   };
+  getAccessToken: () => Promise<string | undefined>;
 }
 
 export const UserContext = createRegisteredContext<IUserContext>(
   "UserContext",
   {
     loading: true,
+    getAccessToken: () => Promise.resolve(undefined),
   }
 );
